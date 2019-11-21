@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RecipeResponse>
+
+@{
+    ViewBag.Title = "Recipe List";
+}
+<table class="table table-striped table-bordered table-sm">
+    <tr>
+        <th class="text-right">RecipeID</th>
+        <th>FoodName</th>
+        <th class="text-right">Category</th>
+        <th class="text-center">UploadDate</th>
+        <th class="text-center">ViewRecipe</th>
+        <th class="text-center">Edit/Delete</th>
+    </tr>
+    @foreach (RecipeResponse item in Model)
+    {
+<tr>
+    <td class="text-right">@item.RecipeID</td>
+    <td>@item.FoodName</td>
+    <td class="text-right">
+        @switch (item.Category)
+        {
+            case 1:
+                @:Breakfast
+                break;
+            case 2:
+                @:Main dish
+                break;
+            case 3:
+                @:Dessert
+                break;
+        }
+    </td>
+    <td class="text-center">@item.UploadDate</td>
+    <td class="text-center">
+        <a asp-action="ViewRecipe" asp-route-recipeID="@item.RecipeID">Detail</a>
+    </td>
+    <td class="text-center">
+        <form asp-action="Delete" method="post">
+            <input type="hidden" name="RecipeID" value="@item.RecipeID" />
+            <button asp-action="AddRecipe" class="btn btn-sm btn-warning" asp-route-recipeID="@item.RecipeID">
+                Edit
+            </button>
+            <button type="submit" class="btn btn-danger btn-sm">
+                Delete
+            </button>
+        </form>
+    </td>
+</tr>
+    }
+</table>
+<div class="text-center">
+    <a asp-action="Create" class="btn btn-primary">Add New Recipe</a>
+</div>

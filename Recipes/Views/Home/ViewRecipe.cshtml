@@ -1,0 +1,35 @@
+﻿@model RecipeResponse
+
+@{
+    ViewBag.Title = "View Recipe";
+}
+
+    
+    <div class="container">
+        <div class="panel-heading text-center">
+            <h1>@Model.FoodName</h1>
+        </div>
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">@Model.FoodName Recipe</div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">Uplode from @Model.UserName</div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">Ingredients</div>
+                <div class="panel-body">@Model.Ingredients</div>
+            </div>
+
+            <div class="panel panel-success">
+                <div class="panel-heading">Recipe</div>
+                <div class="panel-body">@Model.FoodRecipe</div>
+            </div>
+        </div>
+        <a id="link" class="btn btn-primary" asp-action="ReviewRecipe">Review Recipe</a>
+    </div>
+
+
+    

@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Review Recipe";
+}
+
+<div id="container" class="panel-body">
+    <div class="panel-heading text-center">
+        <h1>Review Recipe</h1>
+    </div>
+    <div>
+        <img src="~/lib/bootstrap/images/pasta.jpg" />
+    </div>
+    <table class="tanle table-sm table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Review ID#</th>
+                <th>Food Name</th>
+                <th>Review</th>
+                <th>Ster</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Roasted Garlic Hummus Pasta</td>
+                <td>It was really easy to make and so delicious.</td>
+                <td>
+                    <img src="/lib/bootstrap/images/star.jpg" />
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Roasted Garlic Hummus Pasta</td>
+                <td>This pasta can never be tasteless..</td>
+                <td>
+                    <img src="/lib/bootstrap/images/star.jpg" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <form>
+        <div class="form-group">
+            <label>Food Review </label>
+            <input class="form-control" placeholder="Enter reivew" />
+        </div>
+        <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+        </div>
+    </form>
+
+    <div class="panel-heading text-center">
+        <a class="btn btn-primary" asp-action="RecipeList">Submit Review</a>
+    </div>
+</div>

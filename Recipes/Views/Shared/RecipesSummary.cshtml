@@ -1,0 +1,40 @@
+﻿@model RecipeResponse
+
+    <form asp-action="AddRecipe" method="post">
+        <input type="hidden" asp-for="RecipeID" />
+        <div class="form-group">
+            <label asp-for="FoodName"></label>
+            <div><span asp-validation-for="FoodName" class="text-danger"></span></div>
+            <input asp-for="FoodName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UserName"></label>
+            <div><span asp-validation-for="UserName" class="text-danger"></span></div>
+            <input asp-for="UserName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Ingredients"></label>
+            <div><span asp-validation-for="Ingredients" class="text-danger"></span></div>
+            <textarea style="height:150px" class="form-control" placeholder="Ingredients" asp-for="Ingredients"></textarea>
+        </div>
+        <div class="form-group">
+            <label asp-for="FoodRecipe"></label>
+            <div><span asp-validation-for="FoodRecipe" class="text-danger"></span></div>
+            <textarea style="height:150px" class="form-control" placeholder="Food Recipe" asp-for="FoodRecipe"></textarea>
+        </div>
+        <div class="form-group">
+            <label asp-for="Category"></label>
+            <div><span asp-validation-for="Category" class="text-danger"></span></div>
+            <label asp-for="Category">Category of Food</label>
+            <select class="form-control" asp-for="Category">
+                <option value="">Choose an option</option>
+                <option value="1">Breakfast</option>
+                <option value="2">Main dish</option>
+                <option value="3">Dessert</option>
+            </select>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit">Save</button>
+            <button class="btn btn-secondary" asp-action="RecipeList">Cencel</button>
+        </div>
+    </form>
